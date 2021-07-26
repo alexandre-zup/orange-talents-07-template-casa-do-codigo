@@ -1,6 +1,6 @@
 package br.com.zupacademy.casadocodigo.api.controllers;
 
-import br.com.zupacademy.casadocodigo.api.dto.request.AutorRequest;
+import br.com.zupacademy.casadocodigo.api.dto.request.NovoAutorRequest;
 import br.com.zupacademy.casadocodigo.api.validators.ProibeEmailAutorDuplicadoValidator;
 import br.com.zupacademy.casadocodigo.model.entities.Autor;
 import br.com.zupacademy.casadocodigo.model.repositories.AutorRepository;
@@ -28,7 +28,7 @@ public class AutorController {
 
     @PostMapping
     @Transactional
-    public void cadastrar(@RequestBody @Valid AutorRequest request) {
+    public void cadastrar(@RequestBody @Valid NovoAutorRequest request) {
         Autor autor = request.toModel();
         repository.save(autor);
     }

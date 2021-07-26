@@ -1,6 +1,6 @@
 package br.com.zupacademy.casadocodigo.api.validators;
 
-import br.com.zupacademy.casadocodigo.api.dto.request.AutorRequest;
+import br.com.zupacademy.casadocodigo.api.dto.request.NovoAutorRequest;
 import br.com.zupacademy.casadocodigo.model.repositories.AutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -15,7 +15,7 @@ public class ProibeEmailAutorDuplicadoValidator implements Validator {
 
     @Override
     public boolean supports(Class<?> clazz) {
-        return AutorRequest.class.isAssignableFrom(clazz);
+        return NovoAutorRequest.class.isAssignableFrom(clazz);
     }
 
     @Override
@@ -24,7 +24,7 @@ public class ProibeEmailAutorDuplicadoValidator implements Validator {
             return;
         }
 
-        AutorRequest request = (AutorRequest) target;
+        NovoAutorRequest request = (NovoAutorRequest) target;
 
         if(autorRepository.existsByEmail(request.getEmail())) {
             errors.rejectValue("email", null,

@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.Length;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
-public class AutorRequest {
+public class NovoAutorRequest {
 
     @NotBlank
     @Length(max = 255)
@@ -27,9 +27,9 @@ public class AutorRequest {
      * @param email email com formato válido e máximo 255 caracteres
      * @param descricao máximo 400 caracteres
      */
-    public AutorRequest(@NotBlank @Length(max = 255) String nome,
-                        @NotBlank @Length(max = 255) @Email String email,
-                        @NotBlank @Length(max = 400) String descricao) {
+    public NovoAutorRequest(@NotBlank @Length(max = 255) String nome,
+                            @NotBlank @Length(max = 255) @Email String email,
+                            @NotBlank @Length(max = 400) String descricao) {
         this.nome = nome;
         this.email = email;
         this.descricao = descricao;
