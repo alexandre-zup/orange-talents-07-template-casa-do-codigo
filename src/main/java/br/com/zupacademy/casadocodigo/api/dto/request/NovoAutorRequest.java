@@ -1,5 +1,6 @@
 package br.com.zupacademy.casadocodigo.api.dto.request;
 
+import br.com.zupacademy.casadocodigo.api.validation.UniqueValue;
 import br.com.zupacademy.casadocodigo.model.entities.Autor;
 import org.hibernate.validator.constraints.Length;
 
@@ -15,6 +16,7 @@ public class NovoAutorRequest {
     @NotBlank
     @Length(max = 255)
     @Email
+    @UniqueValue(domainClass = Autor.class, fieldName = "email", message = "{validation.uniquevalue.autor.email}")
     private String email;
 
     @NotBlank
