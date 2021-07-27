@@ -56,6 +56,13 @@ public class Livro {
     @JoinColumn(nullable = false)
     private Autor autor;
 
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    public Livro() {
+    }
+
     public Livro(@NotBlank String titulo,
                  @NotBlank @Length(max = 500) String resumo,
                  String sumario,
@@ -74,6 +81,14 @@ public class Livro {
         this.dataDaPublicacao = dataDaPublicacao;
         this.categoria = categoria;
         this.autor = autor;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitulo() {
+        return titulo;
     }
 
     @Override
