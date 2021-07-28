@@ -1,12 +1,14 @@
 package br.com.zupacademy.casadocodigo.api.controllers;
 
 import br.com.zupacademy.casadocodigo.api.dto.request.NovoLivroRequest;
+import br.com.zupacademy.casadocodigo.api.dto.response.DetalheLivroResponse;
 import br.com.zupacademy.casadocodigo.api.dto.response.LivroResponse;
 import br.com.zupacademy.casadocodigo.model.entities.Livro;
 import br.com.zupacademy.casadocodigo.model.repositories.AutorRepository;
 import br.com.zupacademy.casadocodigo.model.repositories.CategoriaRepository;
 import br.com.zupacademy.casadocodigo.model.repositories.LivroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
@@ -36,5 +38,17 @@ public class LivroController {
     public List<LivroResponse> lista() {
         List<Livro> livros = livroRepository.findAll();
         return livros.stream().map(LivroResponse::new).collect(Collectors.toList());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<DetalheLivroResponse> detalha(@PathVariable Long id) {
+        Livro livro = livroRepository.findById(id).orElse(null);
+
+        if(livro == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        DetalheLivroResponse response = new DetalheLivroResponse(livro);
+        return ResponseEntity.ok().body(response);
     }
 }

@@ -91,6 +91,30 @@ public class Livro {
         return titulo;
     }
 
+    public String getResumo() {
+        return resumo;
+    }
+
+    public String getSumario() {
+        return sumario;
+    }
+
+    public BigDecimal getPreco() {
+        return preco;
+    }
+
+    public Integer getNumeroDePaginas() {
+        return numeroDePaginas;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public Autor getAutor() {
+        return autor;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
