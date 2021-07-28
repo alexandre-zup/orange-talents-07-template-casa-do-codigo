@@ -73,10 +73,6 @@ public class NovoLivroRequest {
         this.autorId = autorId;
     }
 
-    /**
-     * Converte um NovoLivroRequest para o tipo Livro
-     * @return returna {@code Livro} se os dados forem válidos, caso contrário, retorna {@code null}
-     */
     public Livro toModel(AutorRepository autorRepository, CategoriaRepository categoriaRepository) {
         Optional<Autor> optionalAutor = autorRepository.findById(autorId);
         Optional<Categoria> optionalCategoria = categoriaRepository.findById(categoriaId);
