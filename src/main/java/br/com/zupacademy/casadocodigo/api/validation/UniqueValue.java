@@ -12,8 +12,11 @@ import java.lang.annotation.*;
 public @interface UniqueValue {
     String message() default "{validation.uniquevalue.default}";
 
-    Class<?>[] groups() default { };
-    Class<? extends Payload>[] payload() default { };
+    Class<?>[] groups() default {};
+
+    Class<? extends Payload>[] payload() default {};
+
     String fieldName();
+
     Class<?> domainClass();
 }

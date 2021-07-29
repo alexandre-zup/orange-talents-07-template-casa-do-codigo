@@ -29,7 +29,7 @@ public class StateAndCountryValidator implements ConstraintValidator<StateAndCou
             return true/valido se o EstadoId da request for nulo
             return false/invalido se o EstadoId da request tiver dados
          */
-        if(!countryHaveState)
+        if (!countryHaveState)
             return request.getEstadoId() == null;
 
         /*
@@ -37,7 +37,7 @@ public class StateAndCountryValidator implements ConstraintValidator<StateAndCou
         se país possuir estado, então é obrigatório informar o estadoId
             return false/invalido se estiver null
          */
-        if(request.getEstadoId() == null)
+        if (request.getEstadoId() == null)
             return false;
 
         Optional<Estado> optionalEstado = estadoRepository.findById(request.getEstadoId());
@@ -47,7 +47,7 @@ public class StateAndCountryValidator implements ConstraintValidator<StateAndCou
             return true/valido se o Estado pertencer a outro país
             return false/invalido se Estado pertencer a outro país
          */
-        if(optionalEstado.isPresent()) {
+        if (optionalEstado.isPresent()) {
             Estado estado = optionalEstado.get();
             return estado.pertenceAoPais(request.getPaisId());
         }

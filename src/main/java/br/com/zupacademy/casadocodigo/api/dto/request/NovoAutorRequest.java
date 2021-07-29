@@ -24,9 +24,8 @@ public class NovoAutorRequest {
     private String descricao;
 
     /**
-     *
-     * @param nome  máximo 255 caracteres
-     * @param email email com formato válido e máximo 255 caracteres
+     * @param nome      máximo 255 caracteres
+     * @param email     email com formato válido e máximo 255 caracteres
      * @param descricao máximo 400 caracteres
      */
     public NovoAutorRequest(@NotBlank @Length(max = 255) String nome,

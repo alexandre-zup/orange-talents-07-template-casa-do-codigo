@@ -12,6 +12,7 @@ import java.lang.annotation.*;
 public @interface UniqueState {
     String message() default "{validation.uniquestate.default}";
 
-    Class<?>[] groups() default { };
-    Class<? extends Payload>[] payload() default { };
+    Class<?>[] groups() default {};
+
+    Class<? extends Payload>[] payload() default {};
 }

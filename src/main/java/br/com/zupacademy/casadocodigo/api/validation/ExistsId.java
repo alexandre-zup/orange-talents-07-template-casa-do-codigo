@@ -11,8 +11,11 @@ import java.lang.annotation.*;
 public @interface ExistsId {
     String message() default "{validation.existsId.default}";
 
-    Class<?>[] groups() default { };
-    Class<? extends Payload>[] payload() default { };
+    Class<?>[] groups() default {};
+
+    Class<? extends Payload>[] payload() default {};
+
     String fieldName();
+
     Class<?> domainClass();
 }

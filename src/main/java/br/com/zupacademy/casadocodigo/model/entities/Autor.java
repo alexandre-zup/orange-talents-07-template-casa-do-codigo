@@ -42,8 +42,8 @@ public class Autor {
     }
 
     /**
-     * @param nome  máximo 255 caracteres
-     * @param email email com formato válido e máximo 255 caracteres
+     * @param nome      máximo 255 caracteres
+     * @param email     email com formato válido e máximo 255 caracteres
      * @param descricao máximo 400 caracteres
      */
     public Autor(@NotBlank String nome, @NotBlank @Email String email, @NotBlank @Length(max = 400) String descricao) {

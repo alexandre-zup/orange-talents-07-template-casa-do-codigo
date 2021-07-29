@@ -31,7 +31,7 @@ public class LivroController {
     public ResponseEntity<DetalheLivroResponse> detalha(@PathVariable Long id) {
         Livro livro = livroRepository.findById(id).orElse(null);
 
-        if(livro == null) {
+        if (livro == null) {
             return ResponseEntity.notFound().build();
         }
 

@@ -27,13 +27,20 @@ public class NovoClienteRequest {
             message = "{validation.uniquevalue.cliente.documento}")
     private String documento;
 
-    @NotBlank private String nome;
-    @NotBlank private String sobrenome;
-    @NotBlank private String endereco;
-    @NotBlank private String complemento;
-    @NotBlank private String cidade;
-    @NotBlank private String cep;
-    @NotBlank private String telefone;
+    @NotBlank
+    private String nome;
+    @NotBlank
+    private String sobrenome;
+    @NotBlank
+    private String endereco;
+    @NotBlank
+    private String complemento;
+    @NotBlank
+    private String cidade;
+    @NotBlank
+    private String cep;
+    @NotBlank
+    private String telefone;
 
     @NotNull
     @ExistsId(fieldName = "id", domainClass = Pais.class)
@@ -61,10 +68,9 @@ public class NovoClienteRequest {
         @NotNull Pais pais = paisRepository.findById(paisId).get();
         Estado estado;
 
-        if(estadoId == null) {
+        if (estadoId == null) {
             estado = null;
-        }
-        else {
+        } else {
             estado = estadoRepository.findById(estadoId).get();
         }
 

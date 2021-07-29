@@ -21,6 +21,6 @@ public class BrazilianDocumentValidator implements ConstraintValidator<Brazilian
         boolean cpfValido = cpfValidator.isValid(value, context);
         boolean cnpjValido = cnpjValidator.isValid(value, context);
 
-        return  cpfValido || cnpjValido;
+        return cpfValido || cnpjValido;
     }
 }

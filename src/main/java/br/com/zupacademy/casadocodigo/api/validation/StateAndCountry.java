@@ -11,6 +11,7 @@ import java.lang.annotation.*;
 public @interface StateAndCountry {
     String message() default "{validation.existsState.default}";
 
-    Class<?>[] groups() default { };
-    Class<? extends Payload>[] payload() default { };
+    Class<?>[] groups() default {};
+
+    Class<? extends Payload>[] payload() default {};
 }
