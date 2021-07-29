@@ -27,4 +27,8 @@ public class Estado {
         this.nome = nome;
         this.pais = pais;
     }
+
+    public Long getIdDoPais() {
+        return this.pais.getId();
+    }
 }

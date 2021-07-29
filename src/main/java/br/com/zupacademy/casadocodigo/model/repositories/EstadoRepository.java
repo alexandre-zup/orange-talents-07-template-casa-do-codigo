@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface EstadoRepository extends JpaRepository<Estado, Long> {
     List<Estado> findByNomeAndPaisId(String nome, Long paisId);
+
+    boolean existsByPaisId(Long paisId);
 }
