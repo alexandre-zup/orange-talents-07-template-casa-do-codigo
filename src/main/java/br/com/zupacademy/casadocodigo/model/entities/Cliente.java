@@ -58,6 +58,10 @@ public class Cliente {
     @ManyToOne
     private Estado estado;
 
+    @Deprecated
+    public Cliente() {
+    }
+
     public Cliente(String email, String documento, String nome, String sobrenome, String endereco, String complemento,
                    String cidade, String cep, String telefone, Pais pais, Estado estado) {
         this.email = email;

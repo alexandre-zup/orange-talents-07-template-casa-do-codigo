@@ -13,7 +13,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/paises")
-public class NovoPaisController {
+public class PaisController {
 
     @Autowired
     private PaisRepository repository;

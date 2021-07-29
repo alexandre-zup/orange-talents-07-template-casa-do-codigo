@@ -49,9 +49,7 @@ public class StateAndCountryValidator implements ConstraintValidator<StateAndCou
          */
         if(optionalEstado.isPresent()) {
             Estado estado = optionalEstado.get();
-            Long paisId = estado.getIdDoPais();
-
-            return paisId == request.getPaisId();
+            return estado.pertenceAoPais(request.getPaisId());
         }
 
         /*

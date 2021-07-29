@@ -6,8 +6,6 @@ import br.com.zupacademy.casadocodigo.model.entities.Cliente;
 import br.com.zupacademy.casadocodigo.model.repositories.ClienteRepository;
 import br.com.zupacademy.casadocodigo.model.repositories.EstadoRepository;
 import br.com.zupacademy.casadocodigo.model.repositories.PaisRepository;
-import org.hibernate.validator.internal.constraintvalidators.hv.br.CNPJValidator;
-import org.hibernate.validator.internal.constraintvalidators.hv.br.CPFValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,8 +24,6 @@ public class NovoClienteController {
     private PaisRepository paisRepository;
     @Autowired
     private EstadoRepository estadoRepository;
-    private CNPJValidator cnpjValidator;
-    private CPFValidator cpfValidator;
 
     @PostMapping
     public ResponseEntity<IdResponse> cadastra(@RequestBody @Valid NovoClienteRequest request) {

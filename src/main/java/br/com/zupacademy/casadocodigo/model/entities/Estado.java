@@ -28,7 +28,7 @@ public class Estado {
         this.pais = pais;
     }
 
-    public Long getIdDoPais() {
-        return this.pais.getId();
+    public boolean pertenceAoPais(Long paisId) {
+        return this.pais.getId().equals(paisId);
     }
 }
